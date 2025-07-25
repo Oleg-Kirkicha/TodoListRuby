@@ -14,7 +14,8 @@
   <div id="todo_list">
     <div class="todo-item">
       <button class="checkbox">
-        <img src="/circle.svg" alt="Unchecked" width="24" height="24" />
+      <%= image_tag "circle.svg", width: 24, height: 24, alt: "Unchecked" %>
+
       </button>
       <p>Example task text</p>
       <button class="delete">Delete</button>
@@ -22,7 +23,8 @@
 
     <div class="todo-item completed">
       <button class="checkbox">
-        <img src="/circle_ok.svg" alt="Checked" width="24" height="24" />
+      <%= image_tag "circle.svg", width: 24, height: 24, alt: "Unchecked" %>
+
       </button>
       <p>Completed task text</p>
       <button class="delete">Delete</button>

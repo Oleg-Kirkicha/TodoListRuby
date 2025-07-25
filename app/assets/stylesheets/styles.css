@@ -1,179 +1,153 @@
 body{
   background-color: gray;
- 
 }
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
 }
-
 body {
   display: flex;
   flex-direction: column;
-  justify-content: center;  /* вертикальне центрування */
-  align-items: center;      /* горизонтальне центрування */
-  min-height: 100vh;        /* щоб займати весь екран по висоті */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
   padding: 20px;
 }
-
-
 .page-container {
-    background-color: #2c2c2c;
-    padding: 20px;
-    max-width: 400px; /* приблизно max-w-md */
-    width: 100%;
-    border-radius: 1rem; /* rounded-xl */
-    display: grid;
-    gap: 16px;
-    margin: 40px auto 0 auto; /* mt-10 + mx-auto */
-  }
-  
+  background-color: #2c2c2c;
+  padding: 20px;
+  max-width: 400px;
+  width: 100%;
+  border-radius: 1rem;
+  display: grid;
+  gap: 16px;
+  margin: 40px auto 0 auto;
+}
+.page-container h1 {
+  color: #e0e0e0;
+  font-family: "AvaraBold", sans-serif;
+  font-size: 70px;
+  text-align: center;
+}
+@media (max-width: 640px) {
   .page-container h1 {
-    color: #e0e0e0;
-    font-family: "AvaraBold", sans-serif;
-    font-size: 70px;
-    text-align: center;
+    font-size: 50px;
   }
-  
-  @media (max-width: 640px) {
-    .page-container h1 {
-      font-size: 50px;
-    }
-  }
-  
-  #todo_input {
-    background-color: #374151;
-    color: #e0e0e0;
-    border: 1px solid #4b5563;
-    height: 50px;
-    width: 95%;
-    padding: 10px;
-    font-size: 18px;
-    outline: none;
-    transition: border 0.3s ease;
-  }
-  
-  #todo_input::placeholder {
-    color: #a0a0a0;
-  }
-  
-  #todo_input:focus {
-    border-width: 2px;
-    border-color: #8b5cf6;
-  }
-  
-  .buttons-row {
-    display: flex;
-    gap: 8px;
-  }
-  
-  .buttons-row button {
-    font-family: "AvaraBold", sans-serif;
-    color: #e0e0e0;
-    padding: 8px 16px;
-    border-radius: 0.375rem; /* rounded */
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .buttons-row button.all {
-    background-color: #3b82f6;
-  }
-  
-  .buttons-row button.done,
-  .buttons-row button.undone {
-    background-color: #4b5563;
-  }
-  
-  .buttons-row button.done:hover,
-  .buttons-row button.undone:hover {
-    background-color: #374151;
-  }
-  
-  .buttons-row button.done-all {
-    background-color: #10b981;
-  }
-  
-  .buttons-row button.done-all:hover {
-    background-color: #059669;
-  }
-  
-  #todo_list {
-    display: grid;
-    gap: 8px;
-  }
-  
-  .todo-item {
-    background-color: #2c2c2c;
-    padding: 8px;
-    display: grid;
-    grid-template-columns: 24px 1fr 80px;
-    align-items: center;
-    gap: 8px;
-    border: 1px solid #3a3a3a;
-    border-radius: 0.375rem;
-  }
-  
-  .todo-item button.checkbox {
-    width: 24px;
-    height: 24px;
-    border: 1px solid #4b5563;
-    border-radius: 6px;
-    cursor: pointer;
-    background: none;
-    padding: 0;
-  }
-  
-  .todo-item p {
-    color: #e0e0e0;
-    font-family: "AvaraBold", sans-serif;
-    font-size: 18px;
-    word-break: break-word;
-    margin: 0;
-  }
-  
-  .todo-item.completed p {
-    text-decoration: line-through;
-    text-decoration-color: black;
-  }
-  
-  .todo-item button.delete {
-    color: white;
-    font-family: "AvaraBold", sans-serif;
-    border: 1px solid white;
-    border-radius: 0.375rem;
-    padding: 4px 8px;
-    font-size: 14px;
-    background: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .todo-item button.delete:hover {
-    background-color: black;
-    color: #f87171; /* червоний */
-  }
-  
-  #clear_all {
-    font-family: "AvaraBold", sans-serif;
-    color: #e0e0e0;
-    background-color: #3b82f6;
-    padding: 8px 16px;
-    border-radius: 0.375rem;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 12px;
-    display: block;
-    width: 100%;
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  #clear_all:hover {
-    background-color: #2563eb;
-  }
-  
+}
+#todo_input {
+  background-color: #374151;
+  color: #e0e0e0;
+  border: 1px solid #4b5563;
+  height: 50px;
+  width: 95%;
+  padding: 10px;
+  font-size: 18px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+#todo_input::placeholder {
+  color: #a0a0a0;
+}
+#todo_input:focus {
+  border-width: 2px;
+  border-color: #8b5cf6;
+}
+.buttons-row {
+  display: flex;
+  gap: 8px;
+}
+.buttons-row button {
+  font-family: "AvaraBold", sans-serif;
+  color: #e0e0e0;
+  padding: 8px 16px;
+  border-radius: 0.375rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.buttons-row button.all {
+  background-color: #3b82f6;
+}
+.buttons-row button.done,
+.buttons-row button.undone {
+  background-color: #4b5563;
+}
+.buttons-row button.done:hover,
+.buttons-row button.undone:hover {
+  background-color: #374151;
+}
+.buttons-row button.done-all {
+  background-color: #10b981;
+}
+.buttons-row button.done-all:hover {
+  background-color: #059669;
+}
+#todo_list {
+  display: grid;
+  gap: 8px;
+}
+.todo-item {
+  background-color: #2c2c2c;
+  padding: 8px;
+  display: grid;
+  grid-template-columns: 24px 1fr 80px;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #3a3a3a;
+  border-radius: 0.375rem;
+}
+.todo-item button.checkbox {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #4b5563;
+  border-radius: 6px;
+  cursor: pointer;
+  background: none;
+  padding: 0;
+}
+.todo-item p {
+  color: #e0e0e0;
+  font-family: "AvaraBold", sans-serif;
+  font-size: 18px;
+  word-break: break-word;
+  margin: 0;
+}
+.todo-item.completed p {
+  text-decoration: line-through;
+  text-decoration-color: black;
+}
+.todo-item button.delete {
+  color: white;
+  font-family: "AvaraBold", sans-serif;
+  border: 1px solid white;
+  border-radius: 0.375rem;
+  padding: 4px 8px;
+  font-size: 14px;
+  background: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.todo-item button.delete:hover {
+  background-color: black;
+  color: #f87171;
+}
+#clear_all {
+  font-family: "AvaraBold", sans-serif;
+  color: #e0e0e0;
+  background-color: #3b82f6;
+  padding: 8px 16px;
+  border-radius: 0.375rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 12px;
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#clear_all:hover {
+  background-color: #2563eb;
+}
