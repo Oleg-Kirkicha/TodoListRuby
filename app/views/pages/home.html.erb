@@ -1,36 +1,17 @@
 <div class="page-container">
-
   <h1>Todolist</h1>
 
-  <input type="text" id="todo_input" placeholder="What needs to be done?" />
-
-  <div class="buttons-row">
-    <button class="all">All</button>
-    <button class="done">Done</button>
-    <button class="undone">Undone</button>
-    <button class="done-all">Done All</button>
-  </div>
+  <%= form_with url: todos_path, method: :post, local: true do %>
+    <input id="todo_input" type="text" name="text" placeholder="What needs to be done?" />
+  <% end %>
 
   <div id="todo_list">
-    <div class="todo-item">
-      <button class="checkbox">
-      <%= image_tag "circle.svg", width: 24, height: 24, alt: "Unchecked" %>
-
-      </button>
-      <p>Example task text</p>
-      <button class="delete">Delete</button>
-    </div>
-
-    <div class="todo-item completed">
-      <button class="checkbox">
-      <%= image_tag "circle.svg", width: 24, height: 24, alt: "Unchecked" %>
-
-      </button>
-      <p>Completed task text</p>
-      <button class="delete">Delete</button>
-    </div>
+    <% @todos.each do |todo| %>
+      <div class="todo-item <%= 'completed' if todo.done %>">
+        <%= button_to '', toggle_todo_path(todo), method: :patch, class: "checkbox" %>
+        <p><%= todo.text %></p>
+        <%= button_to 'Delete', todo_path(todo), method: :delete, class: "delete" %>
+      </div>
+    <% end %>
   </div>
-
-  <button id="clear_all">Clear All</button>
-
 </div>
