@@ -107,4 +107,19 @@ body {
   a:hover {
     background-color: #374151;
   }
+  .flash-message {
+    margin-bottom: 15px;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+  }
+  .flash-message.alert {
+    background-color: #dc2626; 
+    color: #fff;
+  }
+  .flash-message.notice {
+    background-color: #10b981;
+    color: #fff;
+  }
   

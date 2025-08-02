@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Devise</title>
+  <title>Todolist</title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
   <%= stylesheet_link_tag 'devise', media: 'all' %>
 </head>
 <body>
   <div class="devise-container">
+    <% flash.each do |name, msg| %>
+      <div class="flash-message <%= name %>"><%= msg %></div>
+    <% end %>
     <%= yield %>
   </div>
 </body>
