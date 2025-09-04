@@ -1,4 +1,15 @@
+
 <div class="page-container">
+<div class="top-bar">
+  <% if user_signed_in? %>
+    <span class="top-bar-text">Hello, <%= current_user.email %></span>
+    <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "top-bar-btn" %>
+  <% else %>
+    <%= link_to 'Login', new_user_session_path, class: "top-bar-btn" %>
+    <%= link_to 'Sign up', new_user_registration_path, class: "top-bar-btn" %>
+  <% end %>
+</div>
+
   <h1>Todolist</h1>
 
   <%= form_with url: todos_path, method: :post, local: true do %>
